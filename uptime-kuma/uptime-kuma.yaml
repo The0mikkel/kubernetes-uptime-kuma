@@ -88,3 +88,17 @@ spec:
       - name: uptime-kuma-data
         persistentVolumeClaim:
           claimName: uptime-kuma-data
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: uptime-kuma-data
+  labels:
+    app: uptime-kuma-data
+spec:
+  storageClassName: longhorn
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
