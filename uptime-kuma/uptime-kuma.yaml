@@ -81,7 +81,6 @@ spec:
             timeoutSeconds: 5
             successThreshold: 1
             failureThreshold: 3
-          mountPath: /app/data
           volumeMounts:
             - name: uptime-kuma-data
               mountPath: /app/data
