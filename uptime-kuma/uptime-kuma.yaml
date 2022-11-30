@@ -5,10 +5,10 @@ metadata:
 spec:
   tls:
   - hosts:
-      - ${HOST}
-    secretName: ${TLS-CERT-NAME}
+      - kuma.c3.themikkel.dk
+    secretName: tls-cert
   rules:
-  - host: ${HOST}
+  - host: kuma.c3.themikkel.dk
     http:
       paths:
       - path: /
