@@ -1,10 +1,13 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: kuma-heartbeat
   labels:
     name: kuma-heartbeat
 spec:
+  selector:
+    matchLabels:
+      name: kuma-heartbeat
   replicas: 4
   strategy:
     rollingUpdate:
@@ -32,5 +35,3 @@ spec:
           requests:
             cpu: 10m
             memory: 16Mi
-        imagePullSecrets:
-          - name: sdugitlab
