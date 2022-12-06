@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Deployment
+metadata:
+  name: kuma-heartbeat
+spec:
+  replicas: 6
+  template:
+    spec:
+      containers:
+      - name: kuma-heartbeat
+        image: jsonfry/curl-cron:latest
+        imagePullPolicy: Always
+        env:
+          - name: OPTIONS
+            value: "https://status.themikkel.dk/api/push/AJbz7GZ4cR?status=up&msg=OK&ping="
+          - name: CRON_SCHEDULE
+            value: "*/30 * * * *"
+        resources:
+          limits:
+            cpu: 500m
+            memory: 256Mi
+          requests:
+            cpu: 10m
+            memory: 16Mi
+        imagePullSecrets:
+          - name: sdugitlab
+
