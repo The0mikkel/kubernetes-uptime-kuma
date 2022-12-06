@@ -2,6 +2,8 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: kuma-heartbeat
+  labels:
+    name: kuma-heartbeat
 spec:
   replicas: 6
   strategy:
