@@ -27,7 +27,7 @@ spec:
           - name: URL
             value: "https://status.themikkel.dk/api/push/AJbz7GZ4cR?status=up&msg=OK&ping="
           - name: CRON_SCHEDULE
-            value: "*/30 * * * *"
+            value: "* * * * *"
         resources:
           limits:
             cpu: 100m
