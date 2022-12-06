@@ -5,7 +5,7 @@ metadata:
   labels:
     name: kuma-heartbeat
 spec:
-  replicas: 6
+  replicas: 4
   strategy:
     rollingUpdate:
       maxSurge: 1
@@ -27,8 +27,8 @@ spec:
             value: "*/30 * * * *"
         resources:
           limits:
-            cpu: 500m
-            memory: 256Mi
+            cpu: 100m
+            memory: 64Mi
           requests:
             cpu: 10m
             memory: 16Mi
